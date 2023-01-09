@@ -1,0 +1,6 @@
+name: "yamp"
+version: "0.1.0"
+usage: "helm yamp run"
+description: |-
+  "Run yamp on helm charts"
+command: cmd

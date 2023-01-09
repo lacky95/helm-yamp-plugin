@@ -1,0 +1,20 @@
+prs:
+  brz-bm-e:
+    prs-main-e:
+      config:
+        prs_datasource_host: lprotd-t0000.brz.gv.at
+        prs_datasource_port: 5432
+      certs:
+        prs_mega_cert: abcd
+
+  brz-bm-t:
+    prs-main-t:
+      config:
+        prs_datasource_host: lprotd-t0000.brz.gv.at
+        prs_datasource_port: 5432
+
+  brz-bm-p:
+    prs-main-p:
+      config:
+        prs_datasource_host: lprotd-p0000.brz.gv.at
+        prs_datasource_port: 5432

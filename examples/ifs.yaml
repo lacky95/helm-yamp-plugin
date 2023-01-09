@@ -1,0 +1,24 @@
+file_header:
+---
+if: true
+then: OK
+---
+if: false
+else: OK
+---
+if: null
+then: FAIL
+else: OK
+---
+$myvar: edkdd
+---
+
+_if: { '==' : [ 'woo',  'woo'] }
+_then:
+    stage1:
+        approval: $myvar
+
+_else:
+    stage2:
+        approval: success
+

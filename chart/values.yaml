@@ -1,0 +1,25 @@
+# this global chart allows only one release
+# releaseName = bm-global
+
+# prefix is used for construct label and as addition for some resource names
+# you can search for label construct=1-bm-gl to show all chart objects
+prefix: 1-bm-gl
+
+sourceTitle: bvabm-paas
+source: https://bvabm@git.brz.gv.at/bitbucket/scm/bmshare/bvabm-paas.git
+
+clusterDomainT: apps.a2.cp.cna.at
+clusterDomainP: apps.a3.cp.cna.at
+
+grafana:
+  installToNamespaces:
+    - brz-bm-t
+    - brz-bm-p
+
+operationsPanel:
+  installToNamespaces:
+    - brz-bm-t
+
+bvabmSftp:
+  installToNamespaces:
+    - brz-bm-t

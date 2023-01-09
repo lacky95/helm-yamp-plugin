@@ -1,0 +1,35 @@
+file_header:
+---
+- define: {name: FOO, value: 'BAR'}
+- python_eval: '2 ** 3'
+#- python_eval: 'os.environ["USER"]'
+- python_eval: FOO.lower()
+#- define: {name: FOO, value: {python_eval: __FILE__.upper()}}
+#- FOO =  {{ FOO }}
+- define: { alist: [1,2,3,4,5] }
+- python_eval: 'len(alist)'
+- argv
+---
+defmacro: 
+  name: top_level_macro
+  args:
+  value: 
+    python_eval: 'lookup(__parent__, "argv")[0][1]'
+---
+defmacro:
+  name: amacro
+  args:
+  value:
+    #- python_eval: 'len(argv)' # NameError: name 'argv' is not defined
+    top_level_macro:
+---
+amacro:
+---
+- defmacro:
+    name: factorial
+    args: [N]
+    value:
+      python_eval: "math.factorial(N)"
+---
+factorial: {N: 10}
+ 

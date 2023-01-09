@@ -1,0 +1,11 @@
+
+
+_import: ./config_maps.py
+---
+$file: { _load: '../config/polys/config.yaml' }
+---
+_yaml_document_output:
+  _py: config_maps.generateConfigMaps(file, "brz-bm-e", "prs-main-e")
+
+
+

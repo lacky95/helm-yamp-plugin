@@ -1,0 +1,15 @@
+- define: { zero: 0 }
+- define:
+    name: data
+    value:
+      - type: webserver
+        hostname: web01
+        ip: 1.1.2.3
+      - type: database
+        hostname: db01
+        ip: 1.1.2.2
+- define: {data.1 : Wednesday}
+---
+- data.1
+- data.1.hostname
+- data.zero.hostname
